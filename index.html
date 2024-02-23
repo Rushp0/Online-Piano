@@ -7,5 +7,16 @@
     <body>
         <h1>My First Heading</h1>
         <p>My first paragraph</p>
+        <div class="container">
+  <h1>Hello Button</h1>
+  <button id="helloButton">Click me!</button>
+  <p id="output"></p>
+</div>
+
+<script>
+  document.getElementById("helloButton").addEventListener("click", function() {
+    document.getElementById("output").innerHTML = "Hello";
+  });
+</script>
     </body>
 </html>
