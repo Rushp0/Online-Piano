@@ -1,0 +1,75 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #ffffcc;
+}
+
+/* Navbar */
+#navbar {
+  /* Change background color */
+  background-color: #eeb4b4;
+  border-style: solid; 
+  padding: 5px;
+
+  /* Order navbar elements */
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Sheet Music Container */
+#sheet-music-pic-container {
+  /* Move div and place div in center of page */
+  position: relative;
+  top: 150px;
+  left: 400px;
+}
+
+#sheet-music-pic {
+  /* Change size of image */
+  
+}
+
+/* Piano Keys Containter */
+#piano-keys-container {
+  display: inline-flex;
+
+  /* Change width of container */
+  
+}
+
+.piano {
+  border: 1px solid black;
+  
+  /* Change width of piano key */
+  width: 20px;
+
+  /* Add padding around label */
+  
+}
+
+.black-keys {
+  /* Change background color */
+  background-color: black;
+}
+
+.white-keys {
+  /* Change background-color */
+ background-color: #ffffff;
+}
+
+/* Change black keys label */
+ .black-keys > h4 {
+  /* Change label color */
+  color: #f3ecec;
+}
+
+/* Change white keys label */
+.white-keys> h4 {
+  /* Change label color */
+  color:#050505
+}
