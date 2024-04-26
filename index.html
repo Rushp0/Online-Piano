@@ -1,67 +1,122 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-       <title>Piano Dupe</title>
-       <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <div id="navbar">
-            <h1>Piano Dupe</h1>
-            <div>
-                <label for="show-keys">Show/Hide Keys</label>
-                <input type="checkbox" id="show-keys"></input>
-                <select id="instrument-type">
-                    <option value="gp">
-                        Grand Piano
-                    </option>
-                    <option value="x">
-                        Xylophone
-                    </option>
-                    <option value="ek">
-                        Electric Keyboard
-                    </option>
-                </select>
-                <button id="upload-sheet-music">
-                    Upload Sheet Music
-                </button>
-            </div>
+
+<head>
+  <title>Piano Dupe</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <div id="navbar">
+    <h1>Piano Dupe</h1>
+    <div>
+      <label for="hide-keys">Hide Keys</label>
+      <input type="checkbox" id="show-keys" onclick="showHideLabels()"></input>
+      <input id="upload-sheet-music" type="file"></input>
+    </div>
+  </div>
+
+  <div id="sheet-music-container">
+    <div id="sheet-music-pic-container">
+      <img id="sheet-music-pic" src="imgs/sheet_music.png" />
+    </div>
+  </div>
+
+  <div id="piano-keys-container">
+    <div id="white-keys-container">
+      <div id="C" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">A</h4>
+          <h4 class="key-label piano-note">C</h4>
         </div>
-        <div id="sheet-music-container">
-            <p>Piano Dupe</p>
-            <div id="sheet-music-pic-container">
-                <img id="sheet-music-pic" src="../Online-Piano/imgs/sheet_music.png"/>
-            </div>
+      </div>
+      <div id="D" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">S</h4>
+          <h4 class="key-label piano-note">D</h4>
         </div>
-        <div id="piano-keys-container"> 
-            <div id="A" class="piano white-keys">
-                <h4 class="key-label keyboard">Q</h4>
-                <h4 class="key-label piano-note">A</h4>
-            </div>
-            <div id="B" class="piano black-keys">
-                <h4 class="key-label keyboard">W</h4>
-                <h4 class="key-label piano-note">B</h4>
-            </div>
-            <div id="C" class="piano white-keys">
-                <h4 class="key-label keyboard">E</h4>
-                <h4 class="key-label piano-note">C</h4>
-            </div>
-            <div id="D" class="piano black-keys">
-                <h4 class="key-label keyboard">R</h4>
-                <h4 class="key-label piano-note">D</h4>
-            </div>
-            <div id="E" class="piano white-keys">
-                <h4 class="key-label keyboard">T</h4>
-                <h4 class="key-label piano-note">E</h4>
-            </div>
-            <div id="F" class="piano black-keys">
-                <h4 class="key-label keyboard">Y</h4>
-                <h4 class="key-label piano-note">F</h4>
-            </div>
-            <div id="G" class="piano white-keys">
-                <h4 class="key-label keyboard">U</h4>
-                <h4 class="key-label piano-note">G</h4>
-            </div>
-        </div> 
-        
-    </body>
+      </div>
+      <div id="E" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">D</h4>
+          <h4 class="key-label piano-note">E</h4>
+        </div>
+      </div>
+      <div id="F" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">F</h4>
+          <h4 class="key-label piano-note">F</h4>
+        </div>
+      </div>
+      <div id="G" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">G</h4>
+          <h4 class="key-label piano-note">G</h4>
+        </div>
+      </div>
+      <div id="A" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">H</h4>
+          <h4 class="key-label piano-note">A</h4>
+        </div>
+      </div>
+      <div id="B" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">J</h4>
+          <h4 class="key-label piano-note">B</h4>
+        </div>
+      </div>
+      <div id="C" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">K</h4>
+          <h4 class="key-label piano-note">C</h4>
+        </div>
+      </div>
+      <div id="D" class="piano white-keys">
+        <div class="white-keys-label">
+          <h4 class="key-label keyboard">L</h4>
+          <h4 class="key-label piano-note">D</h4>
+        </div>
+      </div>
+    </div>
+    <div id="black-keys-container">
+      <div id="csharp" class="piano black-keys">
+        <h4 class="key-label keyboard">Q</h4>
+        <h4 class="key-label piano-note">C#</h4>
+      </div>
+      <div id="eb" class="piano black-keys">
+        <h4 class="key-label keyboard">W</h4>
+        <h4 class="key-label piano-note">Eb</h4>
+      </div>
+      <div id="fsharp" class="piano black-keys">
+        <h4 class="key-label keyboard">E</h4>
+        <h4 class="key-label piano-note">F#</h4>
+      </div>
+      <div id="ab" class="piano black-keys">
+        <h4 class="key-label keyboard">R</h4>
+        <h4 class="key-label piano-note">Ab</h4>
+      </div>
+      <div id="bb" class="piano black-keys">
+        <h4 class="key-label keyboard">T</h4>
+        <h4 class="key-label piano-note">Bb</h4>
+      </div>
+      <div id="bb" class="piano black-keys">
+        <h4 class="key-label keyboard">Y</h4>
+        <h4 class="key-label piano-note">C#</h4>
+      </div>
+      <div id="csharp" class="piano black-keys">
+        <h4 class="key-label keyboard">U</h4>
+        <h4 class="key-label piano-note">Eb</h4>
+      </div>
+      <div id="eb" class="piano black-keys">
+        <h4 class="key-label keyboard">I</h4>
+        <h4 class="key-label piano-note">E#</h4>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
